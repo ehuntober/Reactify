@@ -7,3 +7,4 @@ Real-time Updates: Witness changes in task status and details in real-time witho
 Deadline Notifications: Set deadlines for tasks, and "Rectify" sends timely notifications to keep you on track.
 Task Categorization: Organize tasks by categories or priority levels for efficient planning.
 User-Friendly Interface: Intuitive design for a seamless and enjoyable user experience.
+update
