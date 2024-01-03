@@ -29,9 +29,18 @@ const TaskList = () => {
       setNewTaskCategory('General');
       setNewTaskDeadline('');
 
-      // Display a toast notification
       toast.success('Task added successfully!');
     }
+  };
+
+  const handleEditTask = (taskId, newTitle) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === taskId ? { ...task, title: newTitle } : task
+      )
+    );
+
+    toast.info('Task updated successfully!');
   };
 
   return (
@@ -62,7 +71,12 @@ const TaskList = () => {
         <p>No tasks available. Add a task to get started!</p>
       ) : (
         tasks.map((task) => (
-          <Task key={task.id} task={task} onDelete={handleDelete} />
+          <Task
+            key={task.id}
+            task={task}
+            onDelete={handleDelete}
+            onEdit={handleEditTask}
+          />
         ))
       )}
       <ToastContainer position="bottom-right" autoClose={3000} />

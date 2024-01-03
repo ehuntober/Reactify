@@ -1,14 +1,14 @@
 /* Task.css */
 
 .task {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .task-info {
@@ -16,21 +16,37 @@
   }
   
   .task-title {
+    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 5px;
   }
   
   .task-category,
   .task-deadline {
-    color: #777;
+    font-size: 14px;
+    color: #555;
   }
   
+  .task-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-button,
   .delete-button {
     background-color: #dc3545;
     color: #fff;
     border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
+    padding: 8px;
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
   }
   
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #c82333;
+  }
   
