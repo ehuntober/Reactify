@@ -1,0 +1,33 @@
+/* TaskList.css */
+
+.task-list {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .task-list p {
+    color: #555;
+  }
+  
+  .add-task {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .add-task input,
+  .add-task select {
+    flex: 1;
+    padding: 8px;
+    margin-right: 8px;
+  }
+  
+  .add-task button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  

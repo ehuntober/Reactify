@@ -6,6 +6,8 @@ import './TaskList.css';
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+  const [newTaskCategory, setNewTaskCategory] = useState('General');
+  const [newTaskDeadline, setNewTaskDeadline] = useState('');
 
   const handleDelete = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId));
@@ -16,11 +18,14 @@ const TaskList = () => {
       const newTaskObject = {
         id: Date.now(),
         title: newTask,
-        category: 'General', // Default category
+        category: newTaskCategory,
+        deadline: newTaskDeadline || null, // Set deadline if provided
       };
 
       setTasks([...tasks, newTaskObject]);
       setNewTask('');
+      setNewTaskCategory('General');
+      setNewTaskDeadline('');
     }
   };
 
@@ -32,6 +37,19 @@ const TaskList = () => {
           placeholder="Enter task title"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
+        />
+        <select
+          value={newTaskCategory}
+          onChange={(e) => setNewTaskCategory(e.target.value)}
+        >
+          <option value="General">General</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+        </select>
+        <input
+          type="date"
+          value={newTaskDeadline}
+          onChange={(e) => setNewTaskDeadline(e.target.value)}
         />
         <button onClick={handleAddTask}>Add Task</button>
       </div>
