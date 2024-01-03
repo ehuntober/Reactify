@@ -26,6 +26,7 @@ const TaskList = () => {
 
   return (
     <div className="task-list">
+      <h1>Reactify - Task Manager</h1>
       <div className="add-task">
         <input
           type="text"
