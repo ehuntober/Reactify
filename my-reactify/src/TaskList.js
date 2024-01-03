@@ -1,6 +1,8 @@
 // TaskList.js
 import React, { useState } from 'react';
 import Task from './Task';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './TaskList.css';
 
 const TaskList = () => {
@@ -19,13 +21,16 @@ const TaskList = () => {
         id: Date.now(),
         title: newTask,
         category: newTaskCategory,
-        deadline: newTaskDeadline || null, // Set deadline if provided
+        deadline: newTaskDeadline || null,
       };
 
       setTasks([...tasks, newTaskObject]);
       setNewTask('');
       setNewTaskCategory('General');
       setNewTaskDeadline('');
+
+      // Display a toast notification
+      toast.success('Task added successfully!');
     }
   };
 
@@ -60,6 +65,7 @@ const TaskList = () => {
           <Task key={task.id} task={task} onDelete={handleDelete} />
         ))
       )}
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
 };
