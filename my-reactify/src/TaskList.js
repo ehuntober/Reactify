@@ -13,6 +13,7 @@ const TaskList = () => {
 
   const handleDelete = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId));
+    toast.error('Task deleted successfully!');
   };
 
   const handleAddTask = () => {
@@ -68,17 +69,17 @@ const TaskList = () => {
         <button onClick={handleAddTask}>Add Task</button>
       </div>
       {tasks.length === 0 ? (
-        <p>No tasks available. Add a task to get started!</p>
-      ) : (
-        tasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onDelete={handleDelete}
-            onEdit={handleEditTask}
-          />
-        ))
-      )}
+  <p>No tasks available. Add a task to get started!</p>
+) : (
+  tasks.map((task) => (
+    <Task
+      key={task.id}
+      task={task}
+      onDelete={handleDelete}
+      onEdit={handleEditTask}
+    />
+  ))
+)}
       <ToastContainer position="bottom-right" autoClose={3000} />
     </div>
   );
