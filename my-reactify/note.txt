@@ -3,3 +3,4 @@ new is the day
 day is new
 
 today is another day to win:*
+* now let the update continue
