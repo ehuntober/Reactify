@@ -1,1 +1,3 @@
-a single note
+a single note x
+new is the day
+day is new
