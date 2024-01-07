@@ -23,7 +23,7 @@ const Task = ({ task, onDelete, onEdit }) => {
               onChange={(e) => setEditedTitle(e.target.value)}
             />
             <button className="edit-button" onClick={handleSaveEdit}>
-              Save
+              Save +
             </button>
           </>
         ) : (
